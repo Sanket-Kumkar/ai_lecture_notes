@@ -2,7 +2,11 @@ import google.generativeai as genai
 from prompts import SUMMARY_PROMPT, MCQ_PROMPT
 
 # Configure Gemini
-genai.configure(api_key="AIzaSyAB9tUMDK9kz2lRwJ_4ebXdDym8T3A7I-8")
+import os
+import google.generativeai as genai
+
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
 
 # Free & stable model
 model = genai.GenerativeModel("models/gemini-flash-latest")
@@ -20,3 +24,4 @@ def generate_mcqs(transcript, num_questions=10, difficulty="Medium"):
     )
     response = model.generate_content(prompt)
     return response.text
+
