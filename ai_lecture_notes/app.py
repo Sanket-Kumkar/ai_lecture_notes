@@ -138,10 +138,6 @@ if st.session_state.mcqs:
 
 # --------------------------------------------------
 # Reset
-# --------------------------------------------------
-if st.button("🔄 Upload New Lecture"):
-    st.session_state.transcript = None
-    st.session_state.ai_notes = None
-    st.session_state.mcqs = None
-    st.experimental_rerun()
+# ------------------------------------------------
+
 
